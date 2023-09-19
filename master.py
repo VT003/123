@@ -3,7 +3,8 @@ import subprocess
 
 def start_container(container_names):
     for name in container_names:
-        subprocess.Popen('apt ' + name)
+        cmd = 'docker-compose up -d '
+        subprocess.Popen(cmd + name)
 
 def start_zebra_ospf(container_names):
     for name in container_names:
